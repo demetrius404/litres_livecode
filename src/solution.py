@@ -17,7 +17,7 @@ def processing(stack: list) -> str:
 def solution(expression: str) -> str:
 
     multiplier = 1  # default
-    stack = [multiplier]  # init, built-in list uses like a stack
+    stack = [multiplier]  # built-in list uses like a stack
 
     for char in expression:
         if char.isdigit():
