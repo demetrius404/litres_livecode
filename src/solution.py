@@ -4,7 +4,7 @@ def build_str(char_list: list[str], multiplier: int) -> str:
     return "".join(char_list) * multiplier
 
 
-def stack_processing(stack: list) -> str:
+def processing(stack: list) -> str:
     char_list = []  # empty list
     while len(stack):
         stack_value = stack.pop()
@@ -28,7 +28,7 @@ def solution(expression: str) -> str:
             multiplier = 1  # drop to default
             continue
         elif char == "]":
-            stack.append(stack_processing(stack))
+            stack.append(processing(stack))
         else:
             stack.append(char)
-    return stack_processing(stack)
+    return processing(stack)
