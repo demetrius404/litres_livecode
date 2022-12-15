@@ -5,13 +5,13 @@ def build_str(char_list: list[str], multiplier: int) -> str:
 
 
 def stack_processing(stack: list) -> str:
-    temp_char_list = []  # empty list
+    char_list = []  # empty list
     while len(stack):
         stack_value = stack.pop()
         if isinstance(stack_value, int):
-            return build_str(temp_char_list, stack_value)
+            return build_str(char_list, stack_value)
         else:
-            temp_char_list.append(stack_value)
+            char_list.append(stack_value)
 
 
 def solution(expression: str) -> str:
