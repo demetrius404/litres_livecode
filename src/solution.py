@@ -1,4 +1,3 @@
-
 def build_str(char_list: list[str], multiplier: int) -> str:
     char_list.reverse()
     return "".join(char_list) * multiplier
