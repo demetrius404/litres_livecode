@@ -14,21 +14,21 @@ def stack_processing(stack: list) -> str:
             temporary_list.append(stack_value)
 
 
-def solution(source_sequence: str) -> str:
+def solution(expression: str) -> str:
 
     multiplier = 1  # default
     stack = [multiplier]
 
-    for ch in source_sequence:
-        if ch.isdigit():
-            multiplier = int(ch)
+    for char in expression:
+        if char.isdigit():
+            multiplier = int(char)
             continue
-        elif ch == "[":
+        elif char == "[":
             stack.append(multiplier)
-            multiplier = 1
+            multiplier = 1  # drop to default
             continue
-        elif ch == "]":
+        elif char == "]":
             stack.append(stack_processing(stack))
         else:
-            stack.append(ch)
+            stack.append(char)
     return stack_processing(stack)

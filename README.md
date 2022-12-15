@@ -1,3 +1,5 @@
+## description
+
 ```text
 # without regexp
 
@@ -5,6 +7,8 @@
 "[ab]" > ab
 "a2[b3[cd]]" > "abcdcdcdbcdcdcd"
 ```
+
+## [solution](./src/solution.py)
 
 ## pip 
 `pip install -r requirements.txt`
