@@ -31,4 +31,5 @@ def solution(expression: str) -> str:
             stack.append(processing(stack))
         else:
             stack.append(char)
+
     return processing(stack)
