@@ -6,7 +6,7 @@ def build_str(char_list: list[str], multiplier: int) -> str:
 
 def stack_processing(stack: list) -> str:
     temp_char_list = []  # empty list
-    while True:
+    while len(stack):
         stack_value = stack.pop()
         if isinstance(stack_value, int):
             return build_str(temp_char_list, stack_value)
