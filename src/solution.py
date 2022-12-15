@@ -5,19 +5,19 @@ def build_str(char_list: list[str], multiplier: int) -> str:
 
 
 def stack_processing(stack: list) -> str:
-    temporary_list = []  # empty list
+    temp_char_list = []  # empty list
     while True:
         stack_value = stack.pop()
         if isinstance(stack_value, int):
-            return build_str(temporary_list, stack_value)
+            return build_str(temp_char_list, stack_value)
         else:
-            temporary_list.append(stack_value)
+            temp_char_list.append(stack_value)
 
 
 def solution(expression: str) -> str:
 
     multiplier = 1  # default
-    stack = [multiplier]
+    stack = [multiplier]  # init
 
     for char in expression:
         if char.isdigit():
