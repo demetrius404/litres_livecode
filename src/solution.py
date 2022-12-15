@@ -6,11 +6,11 @@ def build_str(char_list: list[str], multiplier: int) -> str:
 def processing(stack: list) -> str:
     char_list = []  # empty list
     while len(stack):
-        stack_value = stack.pop()
-        if isinstance(stack_value, int):
-            return build_str(char_list, stack_value)
+        value = stack.pop()
+        if isinstance(value, int):  # this is multiplier
+            return build_str(char_list, value)
         else:
-            char_list.append(stack_value)
+            char_list.append(value)
 
 
 def solution(expression: str) -> str:
