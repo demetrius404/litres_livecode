@@ -19,13 +19,11 @@ def solution(expression: str) -> str:
     multiplier_default = 1
     stack = [multiplier_default]  # built-in list uses like a stack
 
-    prev = None
     for char in expression:
         if char == "[":
-            if prev and prev.isdigit():
-                stack.pop()
-                stack.append(int(prev))
-                prev = char
+            peek = stack[-1]
+            if len(stack) and isinstance(peek, str) and peek.isdigit():
+                stack.append(int(stack.pop()))
             else:
                 stack.append(multiplier_default)
             continue
@@ -33,6 +31,5 @@ def solution(expression: str) -> str:
             stack.append(processing(stack))
         else:
             stack.append(char)
-            prev = char
 
     return processing(stack)
