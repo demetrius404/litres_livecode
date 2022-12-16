@@ -10,6 +10,6 @@ repos:
   - id: "pytest"
     name: "pytest"
     entry: "pytest"
-    args: ["./src/test_solution.py" ]
+    args: ["./src" ]
     language: "python"
     types: ["python"]
