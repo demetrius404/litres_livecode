@@ -16,7 +16,8 @@ def processing(stack: list) -> str:
 def solution(expression: str) -> str:
 
     # init
-    stack = [1]  # built-in list uses like a stack
+    multiplier_default = 1
+    stack = [multiplier_default]  # built-in list uses like a stack
 
     prev = None
     for char in expression:
@@ -26,7 +27,7 @@ def solution(expression: str) -> str:
                 stack.append(int(prev))
                 prev = char
             else:
-                stack.append(1)
+                stack.append(multiplier_default)
             continue
         elif char == "]":
             stack.append(processing(stack))
