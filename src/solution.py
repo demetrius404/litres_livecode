@@ -15,20 +15,23 @@ def processing(stack: list) -> str:
 
 def solution(expression: str) -> str:
 
-    multiplier = 1  # default
-    stack = [multiplier]  # built-in list uses like a stack
+    # init
+    stack = [1]  # built-in list uses like a stack
 
+    prev = None
     for char in expression:
-        if char.isdigit():
-            multiplier = int(char)
-            continue
-        elif char == "[":
-            stack.append(multiplier)
-            multiplier = 1  # drop to default
+        if char == "[":
+            if prev and prev.isdigit():
+                stack.pop()
+                stack.append(int(prev))
+                prev = char
+            else:
+                stack.append(1)
             continue
         elif char == "]":
             stack.append(processing(stack))
         else:
             stack.append(char)
+            prev = char
 
     return processing(stack)

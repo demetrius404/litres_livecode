@@ -14,6 +14,7 @@ test_case = [
     pytest.param("2[b2[xx]y]", "bxxxxybxxxxy", id="case_9"),
     pytest.param("2[aa2[yy]2[x]]", "aayyyyxxaayyyyxx", id="case_10"),
     pytest.param("4[2[[ab]]]", "abababababababab", id="case_11"),
+    pytest.param("ab3[c2c[q]d]", "abc2cqdc2cqdc2cqd", id="case_12")
 ]
 
 
